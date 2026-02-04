@@ -1,7 +1,7 @@
-import { Outlet } from 'react-router-dom'
+import { Outlet, useSearchParams } from 'react-router-dom'
 import './App.css'
 import NavBar from './NavBar'
-import { useState } from 'react';
+import { useState,useEffect } from 'react';
 
 const GENERATIONS = {
   all: { limit: 20, offset: 0, max: 151 }, // Example: Default to Gen 1
@@ -17,14 +17,30 @@ const GENERATIONS = {
 };
 
 function App() {
- 
-  const [currentGen,setCurrentGen] = useState(GENERATIONS[1]); 
+  const [searchParams, setSearchParams] = useSearchParams();
+  
+  // Read 'gen' from URL (e.g., ?gen=3). Default to '1' if missing.
+  const currentGenId = searchParams.get('gen') || '1';
+  
+  // State is now derived from the URL value
+  const [currentGen, setCurrentGen] = useState(GENERATIONS[currentGenId]); 
 
+  // Sync state if the URL changes (e.g., user clicks 'back' in browser)
+  useEffect(() => {
+    if (GENERATIONS[currentGenId]) {
+      setCurrentGen(GENERATIONS[currentGenId]);
+    }
+  }, [currentGenId]);
+
+  const handleGenChange = (genId) => {
+    // Update the URL; the useEffect above will handle the state update
+    setSearchParams({ gen: genId });
+  };
   return (
     <> 
       <div className="min-h-screen bg-[#FCF9EE]">
       {/* This NavBar stays visible on ALL pages */}
-      <NavBar  onGenChange={(genId) =>setCurrentGen(GENERATIONS[genId])}/> 
+      <NavBar  onGenChange={handleGenChange}/> 
       
       {/* The child components (Home, PokeList, etc.) render here */}
       <main>

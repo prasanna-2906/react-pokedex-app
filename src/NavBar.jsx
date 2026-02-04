@@ -7,7 +7,7 @@ function NavBar({onGenChange}) {
 
   const handleGenClick = (id) => {
     onGenChange(id);      // Change the data
-    navigate('/pokedex'); // Ensure we are on the pokedex page
+    navigate(`/pokedex?gen=${id}`); // Ensure we are on the pokedex page
   };
 
   return (
