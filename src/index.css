@@ -6,9 +6,26 @@
   --font-mono: "JetBrains Mono", monospace;
 }
 
+body{
+  background-color: #FCF9EE;
+}
+
+.pokemon-float{
+  animation : float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-20px) ;
+    }
+}
+
 .pokemon-bounce{
   /* Use a more 'snappy' cubic-bezier for gravity */
-  animation: natural-bounce 2s cubic-bezier(0.45, 0, 0.55, 1) infinite;
+  animation: natural-bounce 5s cubic-bezier(0.45, 0, 0.55, 1) infinite;
 }
 
 @keyframes natural-bounce {
@@ -21,3 +38,4 @@
     transform: translateY(-20px) scaleY(1.05) scaleX(0.95);
   }
 }
+

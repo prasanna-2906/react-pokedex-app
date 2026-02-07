@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import { useOutletContext } from "react-router-dom";
+import { useNavigate, useOutletContext } from "react-router-dom";
 import PokeSkeleton from "./PokeSkeleton";
 
 const typeStyles = {
@@ -29,6 +29,11 @@ function PokeList() {
   const [pokemonData, setPokemonData] = useState([]);
   const [loading, setLoading] = useState(false);
   const observerTarget = useRef(null);
+  const navigate = useNavigate();
+
+  const handleStatusNav = (id)=>{
+    navigate(`/status/${id}`)
+  }
 
   // 1. RESET everything when the generation changes
   useEffect(() => {
@@ -100,6 +105,7 @@ function PokeList() {
           return (
             <div
               key={item.id}
+              onClick={()=> handleStatusNav(item.id)}
               className={`relative w-full h-118 p-6 rounded-[2.5rem] border-2 shadow-2xl flex flex-col items-center overflow-hidden transform hover:scale-105 hover:cursor-pointer transition-all duration-300 bg-linear-to-br ${cardStyle}`}
             >
               <div className="absolute top-10 w-32 h-32 bg-white/20 rounded-full blur-xl" />
