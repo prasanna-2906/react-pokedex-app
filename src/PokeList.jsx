@@ -91,7 +91,7 @@ function PokeList() {
 
   return (
     <div className="mt-32 px-4 md:px-10 mb-20">
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-9 gap-x-6 justify-items-center">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 2xl:grid-cols-5 gap-y-9 gap-x-6 justify-items-center">
         {/* Real Cards */}
         {pokemonData.map((item) => {
           const primaryType = item.types.find((t) => t.slot === 1).type.name;
@@ -100,7 +100,7 @@ function PokeList() {
           return (
             <div
               key={item.id}
-              className={`relative w-full h-128 p-6 rounded-[2.5rem] border-2 shadow-2xl flex flex-col items-center overflow-hidden transform hover:scale-105 hover:cursor-pointer transition-all duration-300 bg-linear-to-br ${cardStyle}`}
+              className={`relative w-full h-118 p-6 rounded-[2.5rem] border-2 shadow-2xl flex flex-col items-center overflow-hidden transform hover:scale-105 hover:cursor-pointer transition-all duration-300 bg-linear-to-br ${cardStyle}`}
             >
               <div className="absolute top-10 w-32 h-32 bg-white/20 rounded-full blur-xl" />
               <p className="z-10 text-xs uppercase tracking-[0.2em] text-white/90 font-black mb-1 drop-shadow-md">
