@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import { useTypeStyles } from "./TypeContext";
 
 function PokemonDetail() {
   const { id } = useParams();
   const [pokemonDetail, setPokemonDetail] = useState([]);
   const [loading, setLoading] = useState(true);
+  const typeStyles = useTypeStyles();
 
   useEffect(() => {
     const fetchPokemonData = async () => {
@@ -47,13 +49,27 @@ function PokemonDetail() {
       {/* RIGHT SIDE: Details Container */}
       <div className="flex-1 px-8">
         <h1 className="text-5xl font-bold capitalize text-gray-800 mb-4">
-          {pokemonDetail.name}
+          {pokemonDetail.name}  <span className="text-gray-500 text-lg">#{pokemonDetail.id}</span>
         </h1>
         
-        {/* You can add types, stats, or abilities here later */}
-        <div className="text-gray-500 text-lg">
-          ID: #{pokemonDetail.id}
-        </div>
+        
+        {/* 2. DYNAMIC TYPES DISPLAY */}
+        <div className="flex gap-3">
+            {pokemonDetail.types.map((t) => {
+              const typeName = t.type.name;
+              // Get style from context or fallback to a default
+              const style = typeStyles[typeName] || "bg-gray-400";
+              
+              return (
+                <span 
+                  key={typeName}
+                  className={`px-6 py-2 rounded-xl text-white font-bold capitalize border-b-4 shadow-md  bg-linear-to-br ${style}`}
+                >
+                  {typeName}
+                </span>
+              );
+            })}
+          </div>
 
 
       </div>
