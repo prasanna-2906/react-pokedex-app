@@ -24,8 +24,29 @@ export const TypeStyleProvider = ({children})=>{
         fairy: "from-[#D685AD] to-[#9B4872] border-[#EE99AC]",
       };
 
+      const typeIcon = {
+        normal: "/icons/star.svg",
+        fire: "/icons/fire.svg",
+        water: "/icons/drop.svg",
+        grass: "/icons/leaf.svg",
+        electric: "/icons/lighting.svg",
+        ice: "/icons/ice-crystal.svg",
+        fighting: "/icons/boxing-gloves.svg",
+        poison: "/icons/skull.svg",
+        ground: "/icons/mountain.svg",
+        flying: "/icons/windy.svg",
+        psychic: "/icons/shining.svg",
+        bug: "/icons/bug.svg",
+        rock: "/icons/rock.svg",
+        ghost: "/icons/ghost.svg",
+        dragon: "/icons/dragon.svg",
+        steel: "/icons/steel.svg",
+        dark: "/icons/night-mode.svg",
+        fairy: "/icons/magic-wand.svg",
+      };
+
       return (
-        <TypeStyleContext.Provider value={typeStyles}>
+        <TypeStyleContext.Provider value={{typeStyles,typeIcon}}>
         {children}
       </TypeStyleContext.Provider>
       );

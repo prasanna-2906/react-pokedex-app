@@ -17,11 +17,11 @@ function Home() {
         </h2>
 
         {/* Subtext Container */}
-        <div className="max-w-3xl mx-auto space-y-3 mb-10">
-          <p className="text-xl md:text-2xl font-semibold text-slate-700 leading-snug">
+        <div className="max-w-3xl font-display mx-auto space-y-3 mb-10">
+          <p className="text-xl md:text-2xl font-semibold  text-slate-700 leading-snug">
             The world of Pokémon is vast and full of mystery.
           </p>
-          <p className="text-base md:text-lg text-slate-500 leading-relaxed tracking-wide">
+          <p className="text-base md:text-lg text-slate-500 leading-relaxed text-center ">
             From the forests of Kanto to the peaks of Paldea. Search the archives,
             explore every habitat, and find the truth behind the legends.
           </p>

@@ -2,8 +2,8 @@
 @import "tailwindcss";
 
 @theme {
-    --font-display: "Fira Code", monospace; 
-  --font-mono: "JetBrains Mono", monospace;
+    --font-display: "Fira Code", monospace;  /* this font for subheading or para*/
+  --font-mono: "JetBrains Mono", monospace;  /* this font for heading or title*/
 }
 
 body{
