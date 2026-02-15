@@ -2,13 +2,30 @@
 @import "tailwindcss";
 
 @theme {
-    --font-display: "Fira Code", monospace; 
-  --font-mono: "JetBrains Mono", monospace;
+    --font-display: "Fira Code", monospace;  /* this font for subheading or para*/
+  --font-mono: "JetBrains Mono", monospace;  /* this font for heading or title*/
+}
+
+body{
+  background-color: #FCF9EE;
+}
+
+.pokemon-float{
+  animation : float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px) ;
+    }
 }
 
 .pokemon-bounce{
   /* Use a more 'snappy' cubic-bezier for gravity */
-  animation: natural-bounce 2s cubic-bezier(0.45, 0, 0.55, 1) infinite;
+  animation: natural-bounce 5s cubic-bezier(0.45, 0, 0.55, 1) infinite;
 }
 
 @keyframes natural-bounce {
@@ -21,3 +38,4 @@
     transform: translateY(-20px) scaleY(1.05) scaleX(0.95);
   }
 }
+
