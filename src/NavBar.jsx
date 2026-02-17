@@ -11,13 +11,13 @@ function NavBar({onGenChange}) {
   };
 
   return (
-    <nav className=" fixed top-0 w-full z-50 h-20 bg-[#4A4E51]/75 backdrop-blur-sm border-b t border-white/10 text-[#FFFFFF] px-10 flex justify-between items-center tracking-wider font-bold">
+    <nav className=" fixed top-0 w-full z-50 h-20 bg-[#fff8ee] backdrop-blur-sm border-b t border-white/10 text-[#44361f] px-10 flex justify-between items-center tracking-wider font-bold shadow-md">
       <div>
         <p>POKEMON</p>
       </div>
       <ul className="flex items-center space-x-8 h-full hover:cursor-pointer">
         <li onClick={()=> navigate('/')}>Home</li>
-        <li className="group relative  text-white ">
+        <li className="group relative  text-[#44361f] ">
           Generation
           <ul className="hidden group-hover:flex flex-col absolute left-0 top-full w-48 bg-white/90 backdrop-blur-md border border-white/20 p-2 rounded-2xl shadow-2xl z-50 animate-in fade-in slide-in-from-top-2 duration-200">
             {/* I added a "top-full" and removed pt-2 to ensure the hover bridge is solid */}

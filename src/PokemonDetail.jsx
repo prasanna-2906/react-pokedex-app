@@ -10,7 +10,7 @@ function PokemonDetail() {
   const {typeStyles,typeIcon} = useTypeStyles();
 
   const statsStyle =
-    "border rounded-2xl font-bold w-32 h-20 font-mono text-gray-700 bg-red-100 border-red-100 shadow-md hover:shadow-lg hover:scale-110 mt-4 flex flex-col justify-center items-center";
+    "border rounded-2xl p-12 flex-nowrap font-bold w-32 h-20 font-mono text-gray-700 bg-red-100 border-red-100 shadow-md hover:shadow-lg hover:scale-110 mt-4 flex flex-col justify-center items-center";
 
   useEffect(() => {
     const fetchPokemonData = async () => {
@@ -117,22 +117,59 @@ function PokemonDetail() {
           </div>
           <div className="flex gap-5">
             <div className={statsStyle}>
-              <h5>Height</h5>
-              <span className="text-2xl text-black font-semibold">
+              <h5 className="flex gap-2"> <div
+                      className="w-7 h-7 bg-black mb-3" // This color is what the icon will be
+                      style={{
+                        maskImage: `url(/icons/ruler.svg)`, // Ensure leading slash if using public folder
+                        WebkitMaskImage: `url(/icons/ruler.svg)`,
+                        maskSize: "contain",
+                        WebkitMaskSize: "contain",
+                        maskRepeat: "no-repeat",
+                        WebkitMaskRepeat: "no-repeat",
+                        maskPosition: "center",
+                        WebkitMaskPosition: "center",
+                      }}
+                    />Height</h5>
+              <span className="text-2xl text-[#2f2c23] font-semibold">
                 {pokemonDetail.height}m
               </span>
             </div>
             <div className={statsStyle}>
-              <h5>
-                <i className="fa-solid fa-weight-hanging"></i>Weight
+              <h5 className="flex gap-2">
+              <div
+                      className="w-7 h-7 bg-black mb-3" // This color is what the icon will be
+                      style={{
+                        maskImage: `url(/icons/weight.svg)`, // Ensure leading slash if using public folder
+                        WebkitMaskImage: `url(/icons/weight.svg)`,
+                        maskSize: "contain",
+                        WebkitMaskSize: "contain",
+                        maskRepeat: "no-repeat",
+                        WebkitMaskRepeat: "no-repeat",
+                        maskPosition: "center",
+                        WebkitMaskPosition: "center",
+                      }}
+                    />Weight
               </h5>
-              <span className="text-2xl text-black font-semibold">
+              <span className="text-2xl text-[#2f2c23] font-semibold">
                 {pokemonDetail.weight}kg
               </span>
             </div>
-            <div className={statsStyle}>
-              <h5>HP</h5>
-              <span className="text-2xl text-black font-semibold">
+            <div className={statsStyle} >
+              <h5 className="flex gap-2">
+              <div
+                      className="w-7 h-7 bg-black mb-3" // This color is what the icon will be
+                      style={{
+                        maskImage: `url(/icons/life-line.svg)`, // Ensure leading slash if using public folder
+                        WebkitMaskImage: `url(/icons/life-line.svg)`,
+                        maskSize: "contain",
+                        WebkitMaskSize: "contain",
+                        maskRepeat: "no-repeat",
+                        WebkitMaskRepeat: "no-repeat",
+                        maskPosition: "center",
+                        WebkitMaskPosition: "center",
+                      }}
+                    />HP</h5>
+              <span className="text-2xl text-[#2f2c23] font-semibold">
                 {
                   pokemonDetail.stats.find((entry) => entry.stat.name === "hp")
                     ?.base_stat
@@ -140,8 +177,21 @@ function PokemonDetail() {
               </span>
             </div>
             <div className={statsStyle}>
-              <h5>Base XP</h5>
-              <span className="text-2xl text-black font-semibold">
+              <h5 className="flex gap-2 flex-nowrap">
+              <div
+                      className="w-9 h-9 bg-black mb-3" // This color is what the icon will be
+                      style={{
+                        maskImage: `url(/icons/xp.svg)`, // Ensure leading slash if using public folder
+                        WebkitMaskImage: `url(/icons/xp.svg)`,
+                        maskSize: "contain",
+                        WebkitMaskSize: "contain",
+                        maskRepeat: "no-repeat",
+                        WebkitMaskRepeat: "no-repeat",
+                        maskPosition: "center",
+                        WebkitMaskPosition: "center",
+                      }}
+                    />Base XP</h5>
+              <span className="text-2xl text-[#2f2c23] font-semibold">
                 {pokemonDetail.base_experience}
               </span>
             </div>

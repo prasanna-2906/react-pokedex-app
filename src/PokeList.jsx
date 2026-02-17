@@ -77,7 +77,7 @@ function PokeList() {
   }, [offset, loading, currentGen]);
 
   return (
-    <div className="mt-32 px-4 md:px-10 mb-20">
+    <div className="mt-32 px-4 md:px-10 mb-20 bg-[#ffeacd]">
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 2xl:grid-cols-5 gap-y-9 gap-x-6 justify-items-center">
         {/* Real Cards */}
         {pokemonData.map((item) => {
